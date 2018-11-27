@@ -1,10 +1,12 @@
 Titan Moon
 =====
 
-|Build| |PyPI| |Status| |Version| |Python| |License|
+|Build| |Coverage| |PyPI| |Status| |Version| |Python| |License|
 
 .. |Build| image:: https://travis-ci.org/seignovert/python-titan-moon.svg?branch=master
         :target: https://travis-ci.org/seignovert/python-titan-moon
+.. |Coverage| image:: https://coveralls.io/repos/github/seignovert/python-titan-moon/badge.svg?branch=master
+        :target: https://coveralls.io/github/seignovert/python-titan-moon?branch=master
 .. |PyPI| image:: https://img.shields.io/badge/PyPI-titan--moon-blue.svg
         :target: https://pypi.org/project/titan-moon
 .. |Status| image:: https://img.shields.io/pypi/status/titan-moon.svg?label=Status
@@ -16,10 +18,11 @@ Titan Moon
 .. |License| image:: https://img.shields.io/pypi/l/titan-moon.svg?label=License
         :target: https://pypi.org/project/titan-moon
 
-Python package to get Titan moon properties.
+Python package to get Titan orbital parameters.
 
 Install
 -------
+
 .. code:: bash
 
     $ pip install titan-moon
@@ -121,14 +124,13 @@ Source
 ------
 The detail calculation of the orbital constrains can be found here_.
 
+.. _here: https://github.com/seignovert/d3js-titan-seasons
+
 |Titan orbit|
 
 .. |Titan orbit| image:: https://raw.githubusercontent.com/seignovert/d3js-titan-seasons/master/Titan_seasons.png
 
-.. _here: https://github.com/seignovert/d3js-titan-seasons
-
-
 
 Dependency
-------------
+----------
 - Numpy
