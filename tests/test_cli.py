@@ -14,20 +14,20 @@ def test_cli_orbit_date_equinox(capsys):
     assert cli_orbit_argv(capsys, '1980-02-22') == '0.004273686299484325'
 
 def test_cli_orbit_date_equinox_verbose(capsys):
-    assert cli_orbit_argv(capsys, '-v 1980-02-22') == '1980-02-22 -> Ls: 0.00º'
+    assert cli_orbit_argv(capsys, '-v 1980-02-22') == u'1980-02-22 -> Ls: 0.00º'
 
 
 def test_cli_orbit_Ls_equinox(capsys):
     assert cli_orbit_argv(capsys, '0') == '2009-07-30'
 
 def test_cli_orbit_Ls_equinox_verbose(capsys):
-    assert cli_orbit_argv(capsys, '-v 0') == 'Ls: 0º (+ 1 Titan year since 1980)-> 2009-07-30'
+    assert cli_orbit_argv(capsys, '-v 0') == u'Ls: 0º (+ 1 Titan year since 1980)-> 2009-07-30'
 
 def test_cli_orbit_Ls_equinox_offset(capsys):
     assert cli_orbit_argv(capsys, '-o 0 0') == '1980-02-22'
 
 def test_cli_orbit_Ls_equinox_offset_verbose(capsys):
-    assert cli_orbit_argv(capsys, '-v -o 0 0') == 'Ls: 0º (+ 0 Titan year since 1980)-> 1980-02-22'
+    assert cli_orbit_argv(capsys, '-v -o 0 0') == u'Ls: 0º (+ 0 Titan year since 1980)-> 1980-02-22'
 
 
 def test_cli_orbit_date_multiple(capsys):
