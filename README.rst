@@ -16,7 +16,7 @@ Titan Moon
 .. |License| image:: https://img.shields.io/pypi/l/titan-moon.svg?label=License
         :target: https://pypi.org/project/titan-moon
 
-Python package to manipulate the Cassini VIMS data.
+Python package to get Titan moon properties.
 
 Install
 -------
@@ -35,10 +35,10 @@ Python usage
     0.004273686299484325
     
     >>> orbit.date(0)
-    1980-02-22
+    '1980-02-22'
 
     >>> orbit.date(0, Ty=1)
-    2009-07-30
+    '2009-07-30'
 
 CLI usage
 ---------
