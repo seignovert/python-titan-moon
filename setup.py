@@ -1,14 +1,28 @@
-#!/usr/bin/env python
+"""Titan moon setup."""
 
-# This will try to import setuptools. If not here, it fails with a message
-try:
-    from setuptools import setup
-except ImportError:
-    raise ImportError("PyVIMS could not be installed, probably because"
-        " setuptools is not installed on this computer."
-        "\nInstall ez_setup ([sudo] pip install ez_setup) and try again.")
+from setuptools import setup
+
+
+__version__ = '0.1.0'
+
 
 setup(
-    setup_requires=['pbr'],
-    pbr=True,
+    name='titan-moon',
+    version=__version__,
+    description='Python package to get Titan orbital parameters',
+    author='Benoit Seignovert',
+    author_email='support.git@seignovert.fr',
+    url='http://github.com/seignovert/python-titan-moon',
+    license='MIT',
+    python_requires='>=3.6',
+    install_requires=[
+        'numpy>=1.18',
+    ],
+    packages=['titan', 'titan.cli'],
+    zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'titan-orbit = titan.cli:cli_orbit',
+        ],
+    },
 )
