@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+"""Titan orbital module."""
+
+from datetime import datetime as dt
+
 import numpy as np
 
 # Constantes
@@ -17,12 +20,21 @@ ORBIT = {
     },
 }
 
+
 def readDate(date):
-    '''Read date as datetime64'''
-    if type(date) == str:
-        date = np.datetime64(
+    """Read date as datetime64."""
+    if hasattr(date, 'time') and isinstance(date.time, dt):
+        return readDate(date.time)
+
+    if isinstance(date, dt):
+        return np.datetime64(date.date())
+
+    if isinstance(date, str):
+        return np.datetime64(
             date.replace('/', '-').replace(' ', 'T').split('T')[0], 'D')
+
     return date
+
 
 class Orbit:
     '''Titan orbit functions and parametes'''
@@ -61,7 +73,7 @@ class Orbit:
         is numerically solved with the Newton method:
 
         L_s^0 = 360 · (Date - Eq^V)/Orbit) - B
-        
+
         L_s^(n+1) = L_s^n - (
             L_s^n - L_s^0 + A · sin(2·pi·(L_s^n - C)/360)
         )/(
